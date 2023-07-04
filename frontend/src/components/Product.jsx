@@ -8,7 +8,7 @@ const Product = ({ product }) => {
    return (
       <Card className='my-3 p-3 rounded'>
          <Link to={`/product/${product._id}`}>
-            <Ratio aspectRatio='4x3'>
+            <Ratio aspectRatio='1x1'>
                <Card.Img
                   src={product.image}
                   className='ratio ratio-21x9'
