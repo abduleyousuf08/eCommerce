@@ -12,10 +12,8 @@ import {
 
 const UserScreenList = () => {
    const { data: users, refetch, isLoading, error } = useGetUsersQuery();
-   const [
-      deleteUser,
-      { isLoading: deleting, error: deleteError },
-   ] = useDeleteUserMutation();
+   const [deleteUser, { isLoading: deleting, error: deleteError }] =
+      useDeleteUserMutation();
 
    const deleteHandler = async (userId) => {
       if (window.confirm('are you sure you ?')) {
@@ -28,6 +26,7 @@ const UserScreenList = () => {
          }
       }
    };
+
    return (
       <>
          <h1>Users</h1>

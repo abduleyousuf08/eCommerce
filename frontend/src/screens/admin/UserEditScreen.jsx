@@ -21,15 +21,16 @@ const UserEditScreen = () => {
    const [isAdmin, setIsAdmin] = useState(false);
 
    //FETCHING THE USER DATA FIRST
-   const { data: user, refetch, isLoading, error } = useGetUserDetailsQuery(
-      userId
-   );
+   const {
+      data: user,
+      refetch,
+      isLoading,
+      error,
+   } = useGetUserDetailsQuery(userId);
 
    //UPDATE USER DATA NOW
-   const [
-      updateUser,
-      { isLoading: updating, error: updateError },
-   ] = useUpdateUserMutation();
+   const [updateUser, { isLoading: updating, error: updateError }] =
+      useUpdateUserMutation();
 
    useEffect(() => {
       if (user) {
@@ -100,7 +101,7 @@ const UserEditScreen = () => {
                      ></Form.Check>
                   </Form.Group>
 
-                  <Button type='submit' variant='primary' nclassName='my-2'>
+                  <Button type='submit' variant='primary' className='my-2'>
                      Update
                   </Button>
                </Form>
