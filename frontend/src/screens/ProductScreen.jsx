@@ -226,7 +226,7 @@ const ProductScreen = () => {
                                     ></Form.Control>
                                  </Form.Group>
                                  <Button
-                                    disable={creatingReview}
+                                    disabled={createReviews && true}
                                     type='submit'
                                     variant='primary'
                                  >

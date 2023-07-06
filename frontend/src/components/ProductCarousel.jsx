@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+
 import { Carousel, Image } from 'react-bootstrap';
 import Loader from './Loader';
 import Message from './Message';
@@ -7,7 +8,7 @@ import { useGetTopProductsQuery } from '../slices/productApiSlice';
 
 const ProductCarousel = () => {
    const { data: products, isLoading, error } = useGetTopProductsQuery();
-   console.log(error);
+
    return isLoading ? (
       <Loader />
    ) : error ? (
@@ -17,11 +18,11 @@ const ProductCarousel = () => {
          {products.map((product) => (
             <Carousel.Item key={product._id}>
                <Link to={`/product/${product._id}`}>
-                  {/* <Ratio aspectRatio={50}> */}
+                  {/* <Ratio aspectRatio={'21x9'}> */}
                   <Image
                      src={product.image}
-                     className='ratio'
-                     style={{ ratio: '--bs-aspect-ratio: 50%' }}
+                     // className='ratio ratio'
+                     // style={{ ratio: '--bs-aspect-ratio: 50%' }}
                      alt={product.name}
                      fluid
                   />
