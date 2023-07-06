@@ -22,10 +22,8 @@ const ProfileScreen = () => {
    //CURRENT USER INFO
    const { userInfo } = useSelector((state) => state.auth);
 
-   const [
-      updateProfile,
-      { isLoading: loadingUpdateProfile },
-   ] = useProfileMutation();
+   const [updateProfile, { isLoading: loadingUpdateProfile }] =
+      useProfileMutation();
 
    const { data: orders, isLoading, error } = useGetMyOrdersQuery();
 
@@ -34,7 +32,7 @@ const ProfileScreen = () => {
          setName(userInfo.name);
          setEmail(userInfo.email);
       }
-   }, [userInfo.name, userInfo.email]);
+   }, [userInfo.name, userInfo.email, userInfo]);
 
    //SUBMITING THE UPDATE
    const submitHandler = async (e) => {

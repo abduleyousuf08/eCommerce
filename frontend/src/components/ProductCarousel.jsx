@@ -20,7 +20,7 @@ const ProductCarousel = () => {
                   {/* <Ratio aspectRatio={50}> */}
                   <Image
                      src={product.image}
-                     class='ratio'
+                     className='ratio'
                      style={{ ratio: '--bs-aspect-ratio: 50%' }}
                      alt={product.name}
                      fluid

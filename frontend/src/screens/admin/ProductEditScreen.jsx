@@ -35,15 +35,11 @@ const ProductEditScreen = () => {
    } = useGetProductDetailsQuery(productId);
 
    //UPDATING THE PRODUCT NOW
-   const [
-      updateProduct,
-      { isLoading: loadingUpdate, error: updateError },
-   ] = useUpdateProductMutation();
+   const [updateProduct, { isLoading: loadingUpdate, error: updateError }] =
+      useUpdateProductMutation();
 
-   const [
-      useUploadProductImage,
-      { isLoading: loadingUpload },
-   ] = useUploadProductImageMutation();
+   const [uploadProductImage, { isLoading: loadingUpload }] =
+      useUploadProductImageMutation();
 
    useEffect(() => {
       if (product) {
@@ -84,7 +80,7 @@ const ProductEditScreen = () => {
       formData.append('image', e.target.files[0]);
 
       try {
-         const res = await useUploadProductImage(formData).unwrap();
+         const res = await uploadProductImage(formData).unwrap();
          toast.success(res.message);
          setImage(res.image);
       } catch (error) {

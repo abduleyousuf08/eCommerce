@@ -41,10 +41,8 @@ const ProductScreen = () => {
       error,
    } = useGetProductDetailsQuery(productId);
    //
-   const [
-      createReviews,
-      { isLoading: creatingReview },
-   ] = useCreateReviewsMutation();
+   const [createReviews, { isLoading: creatingReview }] =
+      useCreateReviewsMutation();
 
    const { userInfo } = useSelector((state) => state.auth);
    //
