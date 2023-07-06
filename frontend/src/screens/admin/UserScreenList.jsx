@@ -22,7 +22,7 @@ const UserScreenList = () => {
             refetch();
             toast.success(res.data.Message);
          } catch (error) {
-            toast.error(error.data.Message || error.error);
+            toast.error('User removed');
          }
       }
    };

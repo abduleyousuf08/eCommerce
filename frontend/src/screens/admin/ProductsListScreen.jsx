@@ -19,15 +19,11 @@ const ProductsListScreen = () => {
       pageNumber,
    });
 
-   const [
-      createProduct,
-      { isLoading: loadingCreate },
-   ] = useCreateProductMutation();
+   const [createProduct, { isLoading: loadingCreate }] =
+      useCreateProductMutation();
 
-   const [
-      deleteProduct,
-      { isLoading: deleting, error: trashError },
-   ] = useDeleteProductMutation();
+   const [deleteProduct, { isLoading: deleting, error: trashError }] =
+      useDeleteProductMutation();
 
    const createProductHandler = async () => {
       if (window.confirm('are you sure you want to create a new product ?')) {
@@ -48,7 +44,7 @@ const ProductsListScreen = () => {
             refetch();
             toast.success(res.data.Message);
          } catch (error) {
-            toast.error(error.data.message || error.error);
+            toast.error('Error occured');
          }
       }
    };
